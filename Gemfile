@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# add pundit
+gem "pundit"
+
 # PG Search
 gem "pg_search"
 
