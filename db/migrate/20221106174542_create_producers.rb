@@ -4,6 +4,7 @@ class CreateProducers < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :company
       t.string :interests
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
