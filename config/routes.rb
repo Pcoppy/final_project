@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :users, only: [:show] do
-    resources :producer, only: [:new, :create]
+    resources :producers, only: [:new, :create]
     resources :editors, only: [:new, :create]
   end
 
+  resources :books
+  resources :authors, only: [:index, :show, :create]
   resources :producers, only: [:edit, :show, :update, :destroy]
   # Defines the root path route ("/")
   # root "articles#index"
