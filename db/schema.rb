@@ -10,9 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_07_110659) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_08_193548) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "authors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.integer "publishing_year"
+    t.string "summary"
+    t.string "additionnal_description"
+    t.string "genre"
+    t.bigint "editor_id", null: false
+    t.bigint "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_books_on_author_id"
+    t.index ["editor_id"], name: "index_books_on_editor_id"
+  end
 
   create_table "editors", force: :cascade do |t|
     t.string "name"
@@ -47,6 +69,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_07_110659) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "books", "authors"
+  add_foreign_key "books", "editors"
   add_foreign_key "editors", "users"
   add_foreign_key "producers", "users"
 end

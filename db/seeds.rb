@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-pierre = User.create( email: "pcoppy@gmail.com", password: "123456", subscription: "none")
+pierre = User.create(email: "pcoppy@gmail.com", password: "123456", subscription: "none")
 
 pierre_producer = Producer.create(user_id: pierre.id, name: "Pierre Coppermann", company: "CoppermannProd", interests: "action,romance")
 pierre_editor = Editor.create(user_id: pierre.id, name: "Pierre Coppermann", address: "Paris", country: "France")
