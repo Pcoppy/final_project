@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :editor
+  has_many :authors
   has_many :books, through: :editors
   has_one :producer
   has_many :views, through: :producer, dependent: :destroy

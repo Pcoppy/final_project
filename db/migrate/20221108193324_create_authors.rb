@@ -4,6 +4,7 @@ class CreateAuthors < ActiveRecord::Migration[7.0]
       t.string :first_name
       t.string :last_name
       t.string :description
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
