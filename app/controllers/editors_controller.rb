@@ -1,6 +1,8 @@
 class EditorsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def index
-    @editors = policy_scope(Editor)
+    @editors = Editor.all
   end
 
   def show
