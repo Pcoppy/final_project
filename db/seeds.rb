@@ -9,6 +9,7 @@
 require "faker"
 
 GENRES = ["adventure", "action", "thriller", "romance", "biography"]
+p "starting seed..."
 
 View.destroy_all
 p "Views destroyed"
@@ -24,16 +25,22 @@ User.destroy_all
 p "Users destroyed"
 
 p "creating Pierre"
-pierre = User.create(email: "pcoppy@gmail.com", password: "123456", first_name: "Pierre", last_name: "Coppermann", username:"pcoppy", subscription: "none")
+pierre = User.create(email: "pcoppy@gmail.com", password: "123456", first_name: "Pierre", last_name: "Coppermann", username:"pcoppy", subscription: "premium")
 pierre_producer = Producer.create(user_id: pierre.id, name: "Pierre Coppermann", company: "CoppermannProd", interests: "action,romance")
 pierre_editor = Editor.create(user_id: pierre.id, name: "Pierre Coppermann", address: "Paris", country: "France")
 p "Pierre created"
 
 p "creating Margot"
-margot = User.create(email: "margot@gmail.com", password: "123456", first_name: "Margot", last_name: "Wilwertz", username:"margot", subscription: "none")
+margot = User.create(email: "margot@gmail.com", password: "123456", first_name: "Margot", last_name: "Wilwertz", username:"margot", subscription: "regular")
 margot_producer = Producer.create(user_id: margot.id, name: "Margot Wilwertz", company: "WilwertzProd", interests: "action,adventure")
 margot_editor = Editor.create(user_id: margot.id, name: "Margot Wilwertz", address: "Paris", country: "France")
 p "Margot created"
+
+p "creating Lea without Producer"
+lea = User.create(email: "lea@gmail.com", password: "123456", first_name: "Lea", last_name: "Wehbe", username:"lea", subscription: "none")
+lea_editor = Editor.create(user_id: lea.id, name: "Lea Wehbe", address: "Paris", country: "France")
+p "Lea created"
+
 
 p "giving birth to the authors..."
 10.times do
@@ -44,7 +51,7 @@ end
 p "writing the books..."
 Author.all.each do |author|
   rand(1..10).times do
-    Book.create(title: "Faker::Book.title", publishing_year: rand(1900..2022), summary: Faker::Quotes::Shakespeare.hamlet_quote, genre: "tbd", additionnal_description:
+    Book.create(title: Faker::Book.title, publishing_year: rand(1900..2022), summary: Faker::Quotes::Shakespeare.hamlet_quote, genre: "tbd", additionnal_description:
     Faker::Quotes::Shakespeare.king_richard_iii_quote, editor_id: Editor.ids.sample, author_id: author.id)
   end
 end
