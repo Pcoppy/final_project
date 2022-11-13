@@ -1,18 +1,35 @@
-<%# <%= image_tag "movie-set.jpg", class:"img-homepage-banner"%>
+
 <div class="img-homepage-banner"></div>
 <div class="homepage-banner">
   <div class="homepage-banner-presentation">
     <div class="homepage-banner-presentation-text">
-      <h1 class= "homepage-title">PLACEHOLDER TITLE</h1>
-      <h4>PLACEHOLDER DESCRIPTION</h4>
+      <h1 class="homepage-title">PLACEHOLDER TITLE</h1>
+      <p class="homepage-text">PLACEHOLDER DESCRIPTION</p>
     </div>
     <div class="homepage-banner-presentation-partners">
-        <%= image_tag "example-logo.jpg", class:"homepage-partners-logo"%>
+      <h4>They trust our services:</h4>
+      <div class="homepage-list-partners">
+        <div class="rounded-partner">
+          <%= image_tag "example-logo.jpg", class:"homepage-partners-logo"%>
+        </div>
+        <div class="rounded-partner">
+          <%= image_tag "example-logo.jpg", class:"homepage-partners-logo"%>
+        </div>
+        <div class="rounded-partner">
+          <%= image_tag "example-logo.jpg", class:"homepage-partners-logo"%>
+        </div>
+      </div>
     </div>
   </div>
   <div class="homepage-banner-account-box">
-    <h2>PLACEHOLDER KILLER TEXT</h2>
-    <div class="button-primary banner-button">JOIN US NOW</div>
+    <div class="img-account-box-container">
+      <%= image_tag "video-camera.png", class:"img-account-box"%>
+    </div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum in doloremque et maiores rem quam, magni odit eveniet minima enim soluta nisi porro quos, ullam odio iure esse fugiat numquam.</p>
+    <div class="homepage-login-signup">
+    <%# ADD A SIGNUP SHEET DIRECTLY HERE %>
+      <%= link_to "JOIN US NOW", books_path, class: "btn button-primary banner-button" %>
+    </div>
   </div>
   <%# <h1>JOIN THE COMMUNITY</h1>
   <div class="producer-editor">
