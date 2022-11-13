@@ -1,38 +1,132 @@
+// Background image
+.img-homepage-banner {
+  z-index: -1;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  background-image: linear-gradient(rgba($color: #000000, $alpha: 0.1), rgba($color: #000000, $alpha: 0.1)), url("https://images.ctfassets.net/3s5io6mnxfqz/3r00qKDT3JVkuM1mJ9aX46/cb66bac6bfaf061947c089a45fab9043/AdobeStock_268786942.jpeg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(1.5px);
+}
+
+// Elements for the entire banner
 .homepage-banner {
   width: 100%;
+  margin: auto;
   height: 100vh;
-  background-color: bisque;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  padding: 50px 100px;
+}
+
+.homepage-banner-presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 80%;
+  width: 50%;
+  margin: auto;
+}
+
+// Elements for the left part of the page
+.homepage-banner-presentation-text {
+  text-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  height: 70%;
+}
+
+.homepage-title {
+  margin-bottom: 30px;
+}
+
+.homepage-text {
+  font-weight: lighter;
+}
+
+.homepage-list-partners {
+  display: flex;
+  justify-self: flex-start;
+  justify-content: space-evenly;
+}
+
+.rounded-partner {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: solid 2px white;
+  place-content: center;
+  display: flex;
+}
+
+.homepage-partners-logo {
+  height: 60px;
+  border-radius: 50%;
+}
+
+// Elements for the right part of the page
+
+.homepage-banner-account-box {
+  background-color: white;
+  height: 80%;
+  margin: auto;
+  width: 40%;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+  color: black;
+  padding: 3%;
+  p {
+    color: $blue;
+    font-weight: lighter;
+  }
+}
+
+.img-account-box-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.img-account-box {
+  width: 120px;
+}
+
+// Elements for the login
+.homepage-login-signup {
+  width: 100%;
+  padding: 0 1%;
+  text-align: center;
+  margin-top: 80px;
+}
+#already-have-account {
+  font-size: small;
+  color: rgba($color: #000000, $alpha: 0.3);
+  text-decoration: none;
+  font-weight: lighter;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .banner-button {
-  color: $red;
-  background-color: rgba($color: $red, $alpha: 0.3);
+  color: $green;
+  background-color: rgba($color: $green, $alpha: 0.3);
+  margin: auto;
+  width: 80% !important;
 }
 
 .banner-button:hover {
-  background-color: rgba($color: $red, $alpha: 1);
+  background-color: rgba($color: $green, $alpha: 1);
   color: white;
-  border-color: $red;
-}
-
-.producer-editor {
-  display: flex;
-  width: 100%;
-  height: auto;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.engagement {
-  h1 {
-    font-weight: 10 !important;
-  }
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
+  border-color: $green;
 }

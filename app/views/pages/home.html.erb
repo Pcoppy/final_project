@@ -1,12 +1,46 @@
+
+<div class="img-homepage-banner"></div>
 <div class="homepage-banner">
-  <div class="producer-editor">
-    <div class="engagement editor-engagement">
-      <h1>SHARE YOUR RIGHTS</h1>
-      <div class="button-primary banner-button">JOIN US NOW</div>
+  <div class="homepage-banner-presentation">
+    <div class="homepage-banner-presentation-text">
+      <h1 class="homepage-title">PLACEHOLDER TITLE</h1>
+      <p class="homepage-text">PLACEHOLDER DESCRIPTION</p>
     </div>
-    <div class="engagement producer-engagement">
-      <h1>DISCOVER THE RIGHTS</h1>
-      <div class="button-primary banner-button">JOIN US NOW</div>
+    <div class="homepage-banner-presentation-partners">
+      <h4>They trust our services:</h4>
+      <div class="homepage-list-partners">
+        <div class="rounded-partner">
+          <%= image_tag "example-logo.jpg", class:"homepage-partners-logo"%>
+        </div>
+        <div class="rounded-partner">
+          <%= image_tag "example-logo.jpg", class:"homepage-partners-logo"%>
+        </div>
+        <div class="rounded-partner">
+          <%= image_tag "example-logo.jpg", class:"homepage-partners-logo"%>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="homepage-banner-account-box">
+    <div class="img-account-box-container">
+      <%= image_tag "video-camera.png", class:"img-account-box"%>
+    </div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum in doloremque et maiores rem quam, magni odit eveniet minima enim soluta nisi porro quos, ullam odio iure esse fugiat numquam.</p>
+    <div class="homepage-login-signup">
+    <%# ADD A SIGNUP SHEET DIRECTLY HERE %>
+      <%= link_to "JOIN US NOW", books_path, class: "btn button-primary banner-button" %>
+    </div>
+  </div>
+  <%# <h1>JOIN THE COMMUNITY</h1>
+  <div class="producer-editor">
+    <div class="engagement editor-engagement">
+      <h1>DISPLAY YOUR RIGHTS</h1>
+      <div class="button-primary banner-button">JOIN US NOW</div>
+    </div>
+    <h1>OR</h1>
+    <div class="engagement producer-engagement">
+      <h1>BROWSE THE WORKS</h1>
+      <div class="button-primary banner-button">JOIN US NOW</div>
+    </div>
+  </div> %>
 </div>
