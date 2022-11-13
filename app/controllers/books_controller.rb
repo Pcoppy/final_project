@@ -9,6 +9,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @author = Author.new
     authorize @book
+    # View.create(producer_id: current_user.id, author_id: @book.author.id)
   end
 
   def new
