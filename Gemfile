@@ -6,6 +6,9 @@ ruby "3.1.2"
 # add pundit
 gem "pundit"
 
+# Cloudinary
+gem "cloudinary"
+
 # PG Search
 gem "pg_search"
 
