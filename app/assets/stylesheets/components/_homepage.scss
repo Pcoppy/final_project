@@ -1,11 +1,59 @@
 .homepage-banner {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   height: 100vh;
-  background-color: bisque;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  padding-top: 50px;
+}
+
+.img-homepage-banner {
+  z-index: -1;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  top: 0px;
+  left: 0px;
+  filter: blur(1.5px);
+  background-color: rgba($color: #000000, $alpha: 0.1);
+}
+
+.homepage-banner-presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 80%;
+  width: 50%;
+  margin: auto;
+}
+
+.homepage-banner-presentation-text {
+  text-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  height: 70%;
+}
+
+.homepage-title {
+  margin-bottom: 30px;
+}
+.homepage-banner-partners {
+  display: flex;
+  justify-self: flex-end;
+  justify-content: space-evenly;
+}
+
+
+.homepage-partners-logo {
+  height: 60px;
+  border-radius: 50%;
 }
 
 .banner-button {
@@ -17,22 +65,4 @@
   background-color: rgba($color: $red, $alpha: 1);
   color: white;
   border-color: $red;
-}
-
-.producer-editor {
-  display: flex;
-  width: 100%;
-  height: auto;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.engagement {
-  h1 {
-    font-weight: 10 !important;
-  }
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
 }
