@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
+    @book = policy_scope(Book).find(params[:id])
     @author = Author.new
     authorize @book
     # View.create(producer_id: current_user.id, author_id: @book.author.id)
