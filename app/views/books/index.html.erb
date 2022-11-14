@@ -1,3 +1,5 @@
+<ul>
 <% @books.each do |book| %>
-  <%= book.title %>
+  <li><%= book.title %> <%= book.approved %></li>
 <% end %>
+</ul>
