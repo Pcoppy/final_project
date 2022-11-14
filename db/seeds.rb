@@ -8,7 +8,7 @@
 
 require "faker"
 
-GENRES = ["adventure", "action", "thriller", "romance", "biography"]
+CATEGORY = ["adventure", "action", "thriller", "romance", "biography"]
 p "starting seed..."
 
 View.destroy_all
@@ -41,7 +41,6 @@ lea = User.create(email: "lea@gmail.com", password: "123456", first_name: "Lea",
 lea_editor = Editor.create(user_id: lea.id, name: "Lea Wehbe", address: "Paris", country: "France")
 p "Lea created"
 
-
 p "giving birth to the authors..."
 10.times do
   Author.create(first_name: Faker::Name.name.split(' ')[0], last_name: Faker::Name.name.split(' ')[1], description:
@@ -56,10 +55,12 @@ Author.all.each do |author|
   end
 end
 
+
 p "adding some views"
 Book.all.each do |book|
   rand(1..100).times do
     View.create(book_id: book.id, producer_id: Producer.ids.sample)
   end
 end
+
 p "seed completed..."
