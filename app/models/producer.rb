@@ -1,4 +1,5 @@
 class Producer < ApplicationRecord
   belongs_to :user
-  # has_many :views, dependent: :destroy
+  has_one :wishlist, dependent: :destroy
+  has_many :views
 end
