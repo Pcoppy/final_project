@@ -1,7 +1,6 @@
 class AuthorsController < ApplicationController
   def index
     @authors = Author.all
-    authorize @author
   end
 
   def show
@@ -11,7 +10,6 @@ class AuthorsController < ApplicationController
 
   def create
     @author = Author.new(author_params)
-    authorize @author
   end
 
   private
