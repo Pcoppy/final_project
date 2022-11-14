@@ -1,17 +1,15 @@
 class AuthorsController < ApplicationController
   def index
-    @authors = Author.all
-    authorize @author
+    @authors = policy_scope(Author)
   end
 
   def show
-    @author = Author.find(params[:id])
+    @author = policy_scope(Author).find(params[:id])
     authorize @author
   end
 
   def create
     @author = Author.new(author_params)
-    authorize @author
   end
 
   private
