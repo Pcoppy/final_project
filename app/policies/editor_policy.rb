@@ -1,6 +1,10 @@
-class ProducerPolicy < ApplicationPolicy
+class EditorPolicy < ApplicationPolicy
+  def index?
+    true
+  end
+
   def show?
-    record.user == user || (record.wishlist & user.books) != []
+    user.subscription != "none" || record.user == user
   end
 
   def edit?
@@ -12,11 +16,11 @@ class ProducerPolicy < ApplicationPolicy
   end
 
   def new?
-    user.subscription != "none" && !user.producer
+    !user.editor
   end
 
   def create?
-    user.subscription != "none" && !user.producer
+    !user.editor
   end
 
   def destroy?
@@ -25,8 +29,8 @@ class ProducerPolicy < ApplicationPolicy
 
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    def resolve
-      scope.all
-    end
+    # def resolve
+    #   scope.all
+    # end
   end
 end
