@@ -50,7 +50,7 @@ end
 p "writing the books..."
 Author.all.each do |author|
   rand(1..10).times do
-    Book.create(title: Faker::Book.title, publishing_year: rand(1900..2022), summary: Faker::Quotes::Shakespeare.hamlet_quote, genre: "tbd", additionnal_description:
+    Book.create(title: Faker::Book.title, publishing_year: rand(1900..2022), summary: Faker::Quotes::Shakespeare.hamlet_quote, genre: CATEGORY.sample, additionnal_description:
     Faker::Quotes::Shakespeare.king_richard_iii_quote, editor_id: Editor.ids.sample, author_id: author.id)
   end
 end
