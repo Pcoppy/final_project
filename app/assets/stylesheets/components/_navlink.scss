@@ -29,6 +29,10 @@
   border-radius: 3px;
 }
 
+.nav-link-photo.active {
+  filter: grayscale(0%);
+}
+
 .nav-item:hover {
   cursor: pointer;
   .nav-link-photo {
