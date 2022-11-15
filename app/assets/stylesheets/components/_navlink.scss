@@ -1,0 +1,51 @@
+.nav-tabs {
+  border: none !important;
+  justify-content: center;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-family: "EB Garamond", "serif";
+  color: white !important;
+  justify-content: space-around;
+  .nav-item {
+    width: 40%;
+    height: 100px;
+    display: flex;
+    place-content: center;
+    position: relative;
+  }
+}
+
+.nav-link-photo {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  filter: grayscale(100%);
+  transition: all 0.5s;
+  border-radius: 3px;
+}
+
+.nav-item:hover {
+  .nav-link-photo {
+    filter: grayscale(0%);
+  }
+}
+
+.nav-link {
+  border-color: transparent !important;
+  width: 80%;
+  color: white !important;
+}
+
+.nav-link:hover {
+  border-color: transparent !important;
+  width: 80%;
+  color: white !important;
+}
+
+.nav-link.active {
+  background-color: transparent!important;
+  border-color: transparent !important;
+}
