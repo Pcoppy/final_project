@@ -28,6 +28,7 @@
 }
 
 .nav-item:hover {
+  cursor: pointer;
   .nav-link-photo {
     filter: grayscale(0%);
   }

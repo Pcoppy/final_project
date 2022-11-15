@@ -35,11 +35,11 @@
     <h1>What we offer for you</h1>
   </div>
   <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
+  <li class="nav-item" role="tab" id="editors-tab" data-bs-toggle="tab" data-bs-target="#editors">
     <%= image_tag("book-editors.png", class: "nav-link-photo") %>
     <button class="nav-link active" id="editors-tab" data-bs-toggle="tab" data-bs-target="#editors" type="button" role="tab" aria-controls="editors" aria-selected="true">I own rights to books</button>
   </li>
-  <li class="nav-item" role="presentation">
+  <li class="nav-item" role="tab" id="producers-tab" data-bs-toggle="tab" data-bs-target="#producers">
     <%= image_tag("camera-producers.png", class: "nav-link-photo") %>
     <button class="nav-link" id="producers-tab" data-bs-toggle="tab" data-bs-target="#producers" type="button" role="tab" aria-controls="producers" aria-selected="false">I want to adapt an existing book</button>
   </li>
