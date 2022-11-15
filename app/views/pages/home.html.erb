@@ -30,28 +30,28 @@
     </div>
   </div> %>
 </div>
-<div class="container">
+<div class="container tutorial-container">
   <div class="tutorial-title">
     <h1>What we offer for you</h1>
   </div>
   <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
-  <li class="nav-item" role="tab" id="editors-tab" data-bs-toggle="tab" data-bs-target="#editors">
+  <li class="nav-item scroll-on-click" role="tab" id="editors-tab" data-bs-toggle="tab" data-bs-target="#editors">
     <%= image_tag("book-editors.png", class: "nav-link-photo") %>
-    <button class="nav-link active" id="editors-tab" data-bs-toggle="tab" data-bs-target="#editors" type="button" role="tab" aria-controls="editors" aria-selected="true">I own rights to books</button>
+    <button class="nav-link" id="editors-tab" data-bs-toggle="tab" data-bs-target="#editors" type="button" role="tab" aria-controls="editors" aria-selected="true">I own rights to books</button>
   </li>
-  <li class="nav-item" role="tab" id="producers-tab" data-bs-toggle="tab" data-bs-target="#producers">
+  <li class="nav-item scroll-on-click" role="tab" id="producers-tab" data-bs-toggle="tab" data-bs-target="#producers">
     <%= image_tag("camera-producers.png", class: "nav-link-photo") %>
     <button class="nav-link" id="producers-tab" data-bs-toggle="tab" data-bs-target="#producers" type="button" role="tab" aria-controls="producers" aria-selected="false">I want to adapt an existing book</button>
   </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show" id="editors" role="tabpanel" aria-labelledby="editors-tab">
-      <h1 class="my-4 mb-10 px-2">Editors Tab</h1>
+        <h1 class="my-4 mb-10 px-2">Editors Tab</h1>
     </div>
   </div>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show" id="producers" role="tabpanel" aria-labelledby="producers-tab">
-      <h1 class="my-4 mb-10 px-2">Producers Tab</h1>
+        <h1 class="my-4 mb-10 px-2">Producers Tab</h1>
     </div>
   </div>
   <%# <div class="producer-editor-separator">
