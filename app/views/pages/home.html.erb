@@ -34,7 +34,25 @@
   <div class="tutorial-title">
     <h1>What we offer for you</h1>
   </div>
-  <div class="producer-editor-separator">
+  <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="editors-tab" data-bs-toggle="tab" data-bs-target="#editors" type="button" role="tab" aria-controls="editors" aria-selected="true">I own rights to books</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="producers-tab" data-bs-toggle="tab" data-bs-target="#producers" type="button" role="tab" aria-controls="producers" aria-selected="false">I want to adapt an existing book</button>
+  </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show" id="editors" role="tabpanel" aria-labelledby="editors-tab">
+      <h1 class="my-4 mb-10 px-2">Editors Tab</h1>
+    </div>
+  </div>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show" id="producers" role="tabpanel" aria-labelledby="producers-tab">
+      <h1 class="my-4 mb-10 px-2">Producers Tab</h1>
+    </div>
+  </div>
+  <%# <div class="producer-editor-separator">
     <div class="homepage-tutorial editor-tutorial">
       <div class="tutorial-title">
         <h2>You own the rights of books</h2>
@@ -45,5 +63,5 @@
         <h2>You want to adapt an existing book</h2>
       </div>
     </div>
-  </div>
+  </div> %>
 </div>
