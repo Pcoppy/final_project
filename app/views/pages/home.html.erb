@@ -14,6 +14,22 @@
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum in doloremque et maiores rem quam, magni odit eveniet minima enim soluta nisi porro quos, ullam odio iure esse fugiat numquam.</p>
     <div class="homepage-login-signup">
     <%# ADD A SIGNUP SHEET DIRECTLY HERE %>
+      <%= simple_form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Log in" %>
+        </div>
+      <% end %>
+
       <%= link_to "JOIN US NOW", books_path, class: "btn button-primary banner-button" %>
     </div>
   </div>
