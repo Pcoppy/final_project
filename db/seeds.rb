@@ -55,7 +55,6 @@ Author.all.each do |author|
   end
 end
 
-
 p "adding some views"
 Book.all.each do |book|
   rand(1..100).times do

@@ -5,23 +5,24 @@ export default class extends Controller {
   connect() {
   }
 }
-function scrollDown () {
-  const tutorialDisplay = document.querySelector(".tutorial-container");
-  tutorialDisplay.scrollIntoView();
+function scrollDown (element) {
+  let targetElement = element.target.classList[1]
+  console.log(targetElement)
+  const tutorialDisplay = document.querySelectorAll(`.tutorial-phases-container`);
+  if (element.target.classList[1] == "editor") {
+    tutorialDisplay[0].scrollIntoView();
+  } else {
+    tutorialDisplay[1].scrollIntoView();
+  }
 }
 
 function displayTutorial () {
   const tutorialContainer = document.querySelector(".tutorial-container")
   tutorialContainer.classList.add('active')
 }
-function displayTest(navItem) {
-  console.log(navItem)
-}
+
 function togglePic (element) {
   const pictures = document.querySelectorAll(".nav-link-photo")
-  console.log(pictures)
-  console.log(element.target.parentElement.children[0].classList)
-  console.log(pictures[0])
   pictures.forEach(picture => {
     picture.classList.remove('active')
   })
