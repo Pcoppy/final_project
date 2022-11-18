@@ -1,5 +1,9 @@
-<ul>
-  <% @books.each do |book| %>
-    <li><%= book.title %> <%= book.approved %></li>
-  <% end %>
-</ul>
+<div class="books-idex-container">
+  <div class="container">
+    <ul>
+      <% @books.each do |book| %>
+        <li><%= book.title %> <%= book.approved %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
