@@ -1,8 +1,10 @@
-<div class="books-idex-container">
+<div class="books-index-container">
   <div class="container">
     <ul>
       <% @books.each do |book| %>
-        <li><%= book.title %> <%= book.approved %></li>
+        <%= link_to book_path(book) do %>
+          <li><%= book.title %> <%= book.approved %> <%= book.views_count.size %></li>
+        <% end %>
       <% end %>
     </ul>
   </div>

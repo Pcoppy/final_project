@@ -9,7 +9,16 @@ class BooksController < ApplicationController
     @book = policy_scope(Book).find(params[:id])
     @author = Author.new
     authorize @book
-    # View.create(producer_id: current_user.id, author_id: @book.author.id)
+    # Changing the view count
+    if @book.views_count.size.zero?
+      @book.add_to_views_count("#{current_user.id} - #{Time.now}")
+      return
+    end
+
+    view_test_variable = @book.views_count.last.split(' - ')
+    return if view_test_variable[0].to_i == current_user.id && (view_test_variable[1].to_time - Time.now).to_i <= 3600
+
+    @book.add_to_views_count("#{current_user.id} - #{Time.now}")
   end
 
   def new
