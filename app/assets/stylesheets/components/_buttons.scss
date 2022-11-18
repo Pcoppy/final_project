@@ -4,3 +4,43 @@
   border-radius: 10px;
   border: solid 1px;
 }
+
+.banner-button {
+  color: $green;
+  background-color: rgba($color: $green, $alpha: 0.3);
+  margin: auto;
+  width: 80% !important;
+}
+
+.btn-placer {
+  width: 100%;
+  a {
+    width: 100%;
+  justify-content: center;
+  display: flex;
+  }
+}
+
+.homepage-button {
+  margin: auto;
+  margin-top: 100px;
+  width: 80% !important;
+  background-color: transparent;
+  &:hover {
+    color: white!important;
+  }
+}
+
+.browse-button {
+  color: $orange;
+  &:hover{
+    background-color: $orange;
+  }
+}
+
+.upload-button {
+  color: $blue;
+  &:hover{
+    background-color: $blue;
+  }
+}

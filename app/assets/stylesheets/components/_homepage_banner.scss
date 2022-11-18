@@ -81,7 +81,7 @@
   margin: auto;
   width: 40%;
   border-radius: 4px;
-  box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+  box-shadow: 1px 1px 1px rgba($color: $black, $alpha: 0.3);
   color: black;
   padding: 3%;
   p {
@@ -109,7 +109,7 @@
 }
 #already-have-account {
   font-size: small;
-  color: rgba($color: #000000, $alpha: 0.3);
+  color: rgba($color: $black, $alpha: 0.3);
   text-decoration: none;
   font-weight: lighter;
   &:hover {
@@ -119,13 +119,6 @@
 
 .simple_form.new_user {
   font-weight: lighter;
-}
-
-.banner-button {
-  color: $green;
-  background-color: rgba($color: $green, $alpha: 0.3);
-  margin: auto;
-  width: 80% !important;
 }
 
 .banner-button:hover {
