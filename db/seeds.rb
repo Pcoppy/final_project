@@ -11,8 +11,6 @@ require "faker"
 CATEGORY = ["adventure", "action", "thriller", "romance", "biography"]
 p "starting seed..."
 
-View.destroy_all
-p "Views destroyed"
 Book.destroy_all
 p "Books destroyed"
 Author.destroy_all
@@ -51,14 +49,7 @@ p "writing the books..."
 Author.all.each do |author|
   rand(1..10).times do
     Book.create(title: Faker::Book.title, publishing_year: rand(1900..2022), summary: Faker::Quotes::Shakespeare.hamlet_quote, genre: CATEGORY.sample, additionnal_description:
-    Faker::Quotes::Shakespeare.king_richard_iii_quote, editor_id: Editor.ids.sample, author_id: author.id)
-  end
-end
-
-p "adding some views"
-Book.all.each do |book|
-  rand(1..100).times do
-    View.create(book_id: book.id, producer_id: Producer.ids.sample)
+    Faker::Quotes::Shakespeare.king_richard_iii_quote, editor_id: Editor.ids.sample, author_id: author.id, approved: (rand(1..2) == 1))
   end
 end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_14_222133) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_18_142605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_222133) do
     t.datetime "updated_at", null: false
     t.text "tags", default: [], array: true
     t.boolean "approved", default: false
+    t.text "views_count", default: [], array: true
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["editor_id"], name: "index_books_on_editor_id"
   end
@@ -106,15 +107,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_222133) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "views", force: :cascade do |t|
-    t.bigint "book_id", null: false
-    t.bigint "producer_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_views_on_book_id"
-    t.index ["producer_id"], name: "index_views_on_producer_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "authors", "users"
@@ -122,6 +114,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_222133) do
   add_foreign_key "books", "editors"
   add_foreign_key "editors", "users"
   add_foreign_key "producers", "users"
-  add_foreign_key "views", "books"
-  add_foreign_key "views", "producers"
 end
