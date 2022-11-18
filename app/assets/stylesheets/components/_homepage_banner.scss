@@ -77,7 +77,7 @@
 
 .homepage-banner-account-box {
   background-color: white;
-  height: 80%;
+  height: 90%;
   margin: auto;
   width: 40%;
   border-radius: 4px;
@@ -106,7 +106,6 @@
   width: 100%;
   padding: 0 1%;
   text-align: center;
-  margin-top: 80px;
 }
 #already-have-account {
   font-size: small;
@@ -116,6 +115,10 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.simple_form.new_user {
+  font-weight: lighter;
 }
 
 .banner-button {

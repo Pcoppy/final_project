@@ -11,27 +11,31 @@
     <div class="img-account-box-container">
       <%= image_tag "video-camera.png", class:"img-account-box"%>
     </div>
-    <p>Lorem ipsum dolor sit, amet consectetur adiozeuhdezioudhzeioudhsipisicing elit. Harum in doloremque et maiores rem quam, magni odit eveniet minima enim soluta nisi porro quos, ullam odio iure esse fugiat numquam.</p>
-    <div class="homepage-login-signup">
-    <%# ADD A SIGNUP SHEET DIRECTLY HERE %>
-      <%= simple_form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :email,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" } %>
-          <%= f.input :password,
-                      required: false,
-                      input_html: { autocomplete: "current-password" } %>
-        </div>
+    <% if !user_signed_in? %>
+      <p>Lorem ipsum dolor sit, amet consectetur adiozeuhdezioudhzeioudhsipisicing elit. Harum in doloremque et maiores rem quam.</p>
+      <div class="homepage-login-signup">
+      <%# ADD A SIGNUP SHEET DIRECTLY HERE %>
+        <%= simple_form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password" } %>
+          </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
-        </div>
-      <% end %>
-
-      <%= link_to "JOIN US NOW", books_path, class: "btn button-primary banner-button" %>
-    </div>
+          <div class="form-actions">
+            <%= f.button :submit, "JOIN US", class: "btn button-primary banner-button" %>
+          </div>
+        <% end %>
+      </div>
+    <% elsif @user.subscription == "none" %>
+      <p>You are signed in but without a subscription</p>
+    <% else %>
+      <p>You are signed in and you have a subscription</p>
+    <% end %>
   </div>
   <%# <h1>JOIN THE COMMUNITY</h1>
   <div class="producer-editor">
