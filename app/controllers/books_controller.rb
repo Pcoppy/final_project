@@ -1,7 +1,17 @@
 class BooksController < ApplicationController
   def index
-    @books = policy_scope(Book)
     # need to add the search
+    if params[:query].present?
+      sql_query = <<~SQL
+        books.title ILIKE :query
+        OR books.genre ILIKE :query
+        OR authors.first_name ILIKE :query
+        OR authors.last_name ILIKE :query
+      SQL
+      @books = policy_scope(Book.joins(:author).where(sql_query, query: "%#{params[:query]}%"))
+    else
+      @books = policy_scope(Book).order(views_count: :desc)
+    end
     authorize @books
   end
 
