@@ -3,21 +3,32 @@
   </div>
   <div class="container database-container">
     <div class="database-centrer">
-    <% if @search_is_on %>
-      <%= link_to books_path do %>
-        <div class="return-to-database">
-          <i class="fas fa-arrow-to-left"></i>
-            Return to browsing
-        </div>
+      <% if @search_is_on %>
+        <%= link_to books_path do %>
+          <div class="return-to-database">
+            <i class="fas fa-arrow-to-left"></i>
+              Return to browsing
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
       <div class="books-index-title">
         <h1>Welcome to our Database</h1>
       </div>
     </div>
     <% unless @search_is_on%>
       <% Book::TAGS.shuffle.each do |tag| %>
-        <%= tag %>
+      <div class="individual-tag">
+        <div class="tag-title-full">
+          <%= link_to "/books?query=#{tag}" do %>
+            <div class="tag-title-text">
+              <h5><%= tag %></h5>
+            </div>
+            <div class="tag-more-info">
+              see more
+              <i class="fas fa-chevron-right more-info-chevron"></i></div>
+          <% end %>
+        </div>
+      </div>
       <% end %>
     <% end %>
     <ul>

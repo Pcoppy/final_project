@@ -1,4 +1,5 @@
 .books-index-container {
+  min-height: 100vh;
   height: fit-content;
   background-color: black;
   color: white!important;
@@ -26,8 +27,40 @@
 }
 
 .return-to-database {
-
   display: flex;
   width: auto;
   justify-content: space-between;
+}
+
+.individual-tag {
+  height: 200px;
+  width: 80%;
+  height: fit-content;
+  margin: 20px;
+  text-align: start;
+}
+
+.tag-title-full {
+  justify-content: flex-start;
+  align-content: flex-end;
+  height: fit-content;
+  width: 100%;
+  &:hover {
+    .tag-more-info {
+      display: flex;
+      margin-left: 20px;
+    }
+  }
+  a {
+    display: flex;
+  }
+}
+
+.tag-more-info {
+  transition: all 0.5s;
+  display: none;
+  height: fit-content;
+}
+.more-info-chevron {
+  align-self: center;
 }
