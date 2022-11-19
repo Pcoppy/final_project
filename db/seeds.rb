@@ -8,7 +8,7 @@
 
 require "faker"
 
-CATEGORY = ["adventure", "action", "thriller", "romance", "biography"]
+CATEGORY = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
 p "starting seed..."
 
 Book.destroy_all
