@@ -9,8 +9,10 @@ class BooksController < ApplicationController
         OR authors.last_name ILIKE :query
       SQL
       @books = policy_scope(Book.joins(:author).where(sql_query, query: "%#{params[:query]}%"))
+      @search_is_on = true
     else
       @books = policy_scope(Book).order(views_count: :desc)
+      @search_is_on = false
     end
     authorize @books
   end

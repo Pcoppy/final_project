@@ -1,10 +1,25 @@
 <div class="books-index-container">
   <div class="books-index-divider">
   </div>
-  <div class="container">
-    <div class="books-index-title">
-      <h1>Welcome to our Database, have a stroll around</h1>
+  <div class="container database-container">
+    <div class="database-centrer">
+    <% if @search_is_on %>
+      <%= link_to books_path do %>
+        <div class="return-to-database">
+          <i class="fas fa-arrow-to-left"></i>
+            Return to browsing
+        </div>
+      <% end %>
+    <% end %>
+      <div class="books-index-title">
+        <h1>Welcome to our Database</h1>
+      </div>
     </div>
+    <% unless @search_is_on%>
+      <% Book::TAGS.shuffle.each do |tag| %>
+        <%= tag %>
+      <% end %>
+    <% end %>
     <ul>
       <% @books.each do |book| %>
         <%= link_to book_path(book) do %>

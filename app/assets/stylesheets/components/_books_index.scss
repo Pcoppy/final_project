@@ -1,11 +1,33 @@
 .books-index-container {
-  height: 100vh;
+  height: fit-content;
   background-color: black;
   color: white!important;
   padding-top: 80px;
+  a {
+    color: white!important;
+  }
 }
 
 .books-index-title {
   display: flex;
   place-content: center;
+}
+
+
+.database-centrer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  a {
+    position: absolute;
+    left: 4px;
+  }
+}
+
+.return-to-database {
+
+  display: flex;
+  width: auto;
+  justify-content: space-between;
 }
