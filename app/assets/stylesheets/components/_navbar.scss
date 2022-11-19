@@ -40,3 +40,12 @@
     border: none;
   }
 }
+
+.navbar-end-items {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-non-homepage {
+  justify-content: space-evenly!important;
+}

@@ -8,8 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <%# NEED TO DO A DROPDOWN FOR ALL THE CATEGORIES %>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <div class="navbar-filter-options">
         <% if user_signed_in? %>
           <li class="dropdown">
             <button class="btn btn-secondary dropdown-toggle dropdown-categories" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -24,12 +23,12 @@
                   </li>
               <% end %>
             </ul>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Updates", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
