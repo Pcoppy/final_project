@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import HomepageController from "./homepage_controller"
 application.register("homepage", HomepageController)
+
+import NavBarScrollerController from "./nav_bar_scroller_controller"
+application.register("nav-bar-scroller", NavBarScrollerController)
