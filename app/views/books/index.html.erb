@@ -15,28 +15,52 @@
         <h1>Welcome to our Database</h1>
       </div>
     </div>
-    <% unless @search_is_on%>
-      <% Book::TAGS.shuffle.each do |tag| %>
-      <div class="individual-tag">
-        <div class="tag-title-full">
-          <%= link_to "/books?query=#{tag}" do %>
-            <div class="tag-title-text">
-              <h5><%= tag %></h5>
-            </div>
-            <div class="tag-more-info">
-              see more
-              <i class="fas fa-chevron-right more-info-chevron"></i></div>
+    <% if @search_is_on%>
+      <ul>
+        <% @books.each do |book| %>
+          <%= link_to book_path(book) do %>
+            <li><%= book.title %> <%= book.approved %> <%= book.views_count.size %></li>
           <% end %>
-        </div>
-      </div>
-      <% end %>
-    <% end %>
-    <ul>
-      <% @books.each do |book| %>
-        <%= link_to book_path(book) do %>
-          <li><%= book.title %> <%= book.approved %> <%= book.views_count.size %></li>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    <% else %>
+      <div class="container database-all-books-container">
+        <% Book::TAGS.shuffle.each do |tag| %>
+          <div class="individual-tag">
+            <div class="tag-title-full">
+              <%= link_to "/books?query=#{tag}" do %>
+                <div class="tag-title-text">
+                  <h5><%= tag %></h5>
+                </div>
+                <div class="tag-more-info">
+                  see more
+                  <i class="fas fa-chevron-right more-info-chevron"></i>
+                </div>
+              <% end %>
+            </div>
+            <div class="database-book-tag-list">
+              <% @books.map {|book| book if book.tags.include?(tag)}.compact.first(5).each do |tag_book|%>
+                <div class="book-card-separator">
+                  <%= image_tag("#{tag_book.genre}_cover.png", class:"database-index-photo") %>
+                  <%= link_to book_path(tag_book) do %>
+                    <div class="card database-book-card">
+                      <%= tag_book.title %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+              <div class="book-card-separator">
+                <%= link_to "/books?query=#{tag}" do %>
+                  <div class="card database-book-card more-options-card">
+                  <h1>+</h1>
+                    <p>and <%= @books.map {|book| book if book.tags.include?(tag)}.compact.size - 5 %> more...</p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

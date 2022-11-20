@@ -34,7 +34,7 @@
 
 .individual-tag {
   height: 200px;
-  width: 80%;
+  width: 100%;
   height: fit-content;
   margin: 20px;
   text-align: start;
@@ -63,4 +63,24 @@
 }
 .more-info-chevron {
   align-self: center;
+}
+
+.database-all-books-container {
+  margin-top: 70px;
+  height: fit-content;
+  padding-bottom: 40px;
+}
+
+.database-book-tag-list {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  height: fit-content;
+}
+
+.database-index-photo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
