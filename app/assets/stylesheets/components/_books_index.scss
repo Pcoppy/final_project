@@ -1,6 +1,86 @@
 .books-index-container {
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   background-color: black;
   color: white!important;
-  padding-top: 30px;
+  padding-top: 80px;
+  a {
+    color: white!important;
+  }
+}
+
+.books-index-title {
+  display: flex;
+  place-content: center;
+}
+
+
+.database-centrer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  a {
+    position: absolute;
+    left: 4px;
+  }
+}
+
+.return-to-database {
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+}
+
+.individual-tag {
+  height: 200px;
+  width: 100%;
+  height: fit-content;
+  margin: 20px;
+  text-align: start;
+}
+
+.tag-title-full {
+  justify-content: flex-start;
+  align-content: flex-end;
+  height: fit-content;
+  width: 100%;
+  &:hover {
+    .tag-more-info {
+      display: flex;
+      margin-left: 20px;
+    }
+  }
+  a {
+    display: flex;
+  }
+}
+
+.tag-more-info {
+  transition: all 0.5s;
+  display: none;
+  height: fit-content;
+}
+.more-info-chevron {
+  align-self: center;
+}
+
+.database-all-books-container {
+  margin-top: 70px;
+  height: fit-content;
+  padding-bottom: 40px;
+}
+
+.database-book-tag-list {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  height: fit-content;
+}
+
+.database-index-photo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

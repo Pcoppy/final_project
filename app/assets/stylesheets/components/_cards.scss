@@ -1,0 +1,34 @@
+.cards {
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px 1px rgba($color: #000000, $alpha: 0.3);
+  border: 0px solid rgba($color: #000000, $alpha: 0.3);
+}
+
+.database-book-card {
+  height: 100px;
+  width: 200px;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  justify-content: end;
+}
+
+.book-card-separator {
+  margin: 0px 5px;
+  position: relative;
+}
+
+.more-options-card {
+  background-color: rgba($color: red, $alpha: 0.3);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  p {
+    display: none;
+  }
+}
+
+.more-options-card:hover {
+  p {
+    display: block;
+  }
+}
