@@ -17,6 +17,7 @@
 .database-container {
   padding-bottom: 40px;
 }
+
 .database-centrer {
   width: 100%;
   display: flex;
@@ -90,4 +91,16 @@
 .database-book-container-search {
   display: flex;
   flex-wrap: wrap;
+}
+
+.book-view-counter {
+  display: flex;
+  font-size: small;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  p {
+    margin-top: -2px;
+    margin-right: 2px;
+  }
 }

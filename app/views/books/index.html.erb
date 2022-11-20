@@ -26,6 +26,10 @@
                 <%= link_to book_path(book) do %>
                   <div class="card database-book-card">
                     <%= book.title %>
+                    <div class="book-view-counter">
+                      <p><%= book.views_count.size %></p>
+                      <i class="far fa-eye"></i>
+                    </div>
                   </div>
                 <% end %>
               </div>
@@ -54,6 +58,10 @@
                   <%= link_to book_path(tag_book) do %>
                     <div class="card database-book-card">
                       <%= tag_book.title %>
+                      <div class="book-view-counter">
+                        <p><%= tag_book.views_count.size %></p>
+                        <i class="far fa-eye"></i>
+                      </div>
                     </div>
                   <% end %>
                 </div>

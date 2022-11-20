@@ -2,14 +2,6 @@ class BooksController < ApplicationController
   def index
     # need to add the search
     if params[:query].present?
-      # sql_query = <<~SQL
-      #   books.title ILIKE :query
-      #   OR books.genre ILIKE :query
-      #   OR books.tags IINCLUDES :query
-      #   OR authors.first_name ILIKE :query
-      #   OR authors.last_name ILIKE :query
-      # SQL
-      # @books = policy_scope(Book.joins(:author).where(sql_query, query: "%#{params[:query]}%"))
       @books = policy_scope(Book.search_antyhing("%#{params[:query]}%"))
       @search_is_on = true
       @search_terms = params[:query]
