@@ -39,10 +39,3 @@ navItems.forEach(navItem => {
   navItem.addEventListener("click", scrollDown)
   navItem.addEventListener("click", togglePic)
 })
-
-function changeLogoSource () {
-  const navbarLogo = document.querySelector(".navbar-brand img")
-  // console.log(navbarLogo.src)
-  this.scrollY > 680 ? navbarLogo.src = "http://localhost:3000/assets/rights-logo-eecac45108f425f009587b4ca0a9f46cf541ae41d4034a870baa914f87838d33.png" : navbarLogo.src = "http://localhost:3000/assets/rights-logo-white-95ca7fabe1012c1e99130768a44dd135b4ee1523b5730bd832bb886905ff0cbf.png"
-}
-window.addEventListener("scroll", changeLogoSource)

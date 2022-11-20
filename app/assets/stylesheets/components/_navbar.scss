@@ -8,13 +8,16 @@
 .navbar {
   position: fixed;
   top: 0;
+  z-index: 1000;
   width: 100%;
+  transition: background-color 0.2s;
   img {
     width: 40px;
   }
 }
 .navbar-transparent {
   background: transparent;
+  color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -27,4 +30,28 @@
 
 .login-btn {
   color: white;
+}
+
+// For non-homepage-navbar
+.dropdown-categories {
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  &:hover {
+    background-color: transparent;
+    border: none;
+  }
+}
+.dropdown {
+  list-style: none;
+}
+.navbar-end-items {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-scrolled {
+  background-color: black;
+  color: white;
+  box-shadow: 0px 1px 0px 0px rgba($color: white, $alpha: 0.2);
 }

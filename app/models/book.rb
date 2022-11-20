@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
-  CATEGORY = ["adventure", "action", "thriller", "romance", "biography"]
-  TAGS = ["adventure", "action", "thriller", "romance", "biography"]
+  CATEGORY = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
+  TAGS = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
 
   belongs_to :author
   belongs_to :editor

@@ -8,7 +8,8 @@
 
 require "faker"
 
-CATEGORY = ["adventure", "action", "thriller", "romance", "biography"]
+CATEGORY = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
+TAGS = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
 p "starting seed..."
 
 Book.destroy_all
@@ -40,7 +41,7 @@ lea_editor = Editor.create(user_id: lea.id, name: "Lea Wehbe", address: "Paris",
 p "Lea created"
 
 p "giving birth to the authors..."
-10.times do
+30.times do
   Author.create(first_name: Faker::Name.name.split(' ')[0], last_name: Faker::Name.name.split(' ')[1], description:
   Faker::Quotes::Chiquito.sentence, user_id: User.ids.sample)
 end
@@ -48,8 +49,9 @@ end
 p "writing the books..."
 Author.all.each do |author|
   rand(1..10).times do
+    tag_list = [TAGS.sample]
     Book.create(title: Faker::Book.title, publishing_year: rand(1900..2022), summary: Faker::Quotes::Shakespeare.hamlet_quote, genre: CATEGORY.sample, additionnal_description:
-    Faker::Quotes::Shakespeare.king_richard_iii_quote, editor_id: Editor.ids.sample, author_id: author.id, approved: (rand(1..2) == 1))
+    Faker::Quotes::Shakespeare.king_richard_iii_quote, editor_id: Editor.ids.sample, tags: tag_list, author_id: author.id, approved: (rand(1..2) == 1))
   end
 end
 
