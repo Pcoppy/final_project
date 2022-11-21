@@ -1,0 +1,32 @@
+// .search-bar {
+//   position: relative !important;
+//   height: 15px !important;
+//   width: 570px !important;
+//   margin: 0 auto;
+//   margin-bottom: 20px;
+//   color: white;
+
+//   input::placeholder {
+//     font-size: 16px;
+//   }
+// }
+
+*:focus {
+  outline: none;
+}
+
+.form-control-searchbar {
+  border-radius: 7px !important;
+  background-color: transparent;
+  border: none;
+  padding: 5px 0px;
+  color: white!important;
+  transition: border-bottom 0.3s;
+}
+
+.searchbar-container {
+  display: flex;
+}
+.underlined {
+  border-bottom: 1px solid white;
+}

@@ -1,6 +1,4 @@
 <div class="books-index-container">
-  <div class="books-index-divider">
-  </div>
   <div class="container database-container">
     <div class="database-centrer">
       <% if @search_is_on %>
@@ -10,18 +8,33 @@
               Return to browsing
           </div>
         <% end %>
+        <div class="books-index-title">
+          <h1>Results for "<%= @search_terms %>"</h1>
+        </div>
+      <% else %>
+        <div class="books-index-title">
+          <h1>Welcome to our Database</h1>
+        </div>
       <% end %>
-      <div class="books-index-title">
-        <h1>Welcome to our Database</h1>
-      </div>
     </div>
     <% if @search_is_on%>
       <ul>
-        <% @books.each do |book| %>
-          <%= link_to book_path(book) do %>
-            <li><%= book.title %> <%= book.approved %> <%= book.views_count.size %></li>
+        <div class="database-book-container-search">
+          <% @books.each do |book| %>
+              <div class="book-card-separator book-card-separator-search">
+                <%= image_tag("#{book.genre}_cover.png", class:"database-index-photo") %>
+                <%= link_to book_path(book) do %>
+                  <div class="card database-book-card">
+                    <%= book.title %>
+                    <div class="book-view-counter">
+                      <p><%= book.views_count.size %></p>
+                      <i class="far fa-eye"></i>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
           <% end %>
-        <% end %>
+        </div>
       </ul>
     <% else %>
       <div class="container database-all-books-container">
@@ -45,6 +58,10 @@
                   <%= link_to book_path(tag_book) do %>
                     <div class="card database-book-card">
                       <%= tag_book.title %>
+                      <div class="book-view-counter">
+                        <p><%= tag_book.views_count.size %></p>
+                        <i class="far fa-eye"></i>
+                      </div>
                     </div>
                   <% end %>
                 </div>

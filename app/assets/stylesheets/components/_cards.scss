@@ -5,8 +5,8 @@
 }
 
 .database-book-card {
-  height: 100px;
-  width: 200px;
+  height: 100%;
+  width: 100%;
   background-color: rgba($color: #000000, $alpha: 0.3);
   justify-content: end;
 }
@@ -14,10 +14,16 @@
 .book-card-separator {
   margin: 0px 5px;
   position: relative;
+  height: 100px;
+  width: 200px;
 }
-
+.book-card-separator-search {
+  width: 290px;
+  height: 145px;
+  margin: 10px;
+}
 .more-options-card {
-  background-color: rgba($color: red, $alpha: 0.3);
+  background-color: rgba($color: $green, $alpha: 0.3);
   text-align: center;
   display: flex;
   justify-content: center;
