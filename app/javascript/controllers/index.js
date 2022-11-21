@@ -12,3 +12,6 @@ application.register("homepage", HomepageController)
 
 import NavBarScrollerController from "./nav_bar_scroller_controller"
 application.register("nav-bar-scroller", NavBarScrollerController)
+
+import SearchbarController from "./searchbar_controller"
+application.register("searchbar", SearchbarController)
