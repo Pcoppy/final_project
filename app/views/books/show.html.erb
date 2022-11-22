@@ -1,2 +1,42 @@
-<h1>This is a test</h1>
-<%= @book.views_count.size %>
+<div class="navbar-pusher">
+  <div class="container">
+    <div class="book-show-info-grid">
+    <div class="book-show-box book-show-cover">
+      <div class="book-show-cover-img">
+        <%= image_tag("#{@book.genre}_cover.png") %>
+      </div>
+    </div>
+    <div class="book-show-box book-show-title">
+      <h1><%= @book.title %></h1>
+    </div>
+    <div class="book-show-box book-show-description">
+      <div class="book-summary">
+        <h5>Summary:</h5>
+        <p><%= @book.summary %></p>
+      </div>
+      <div class="book-more-info">
+        <h5>Additionnal information:</h5>
+        <p><%= @book.additionnal_description %></p>
+      </div>
+    </div>
+    <div class="book-show-box book-show-tags">
+      <ul>
+        <% @book.tags.each do |tag| %>
+          <%= tag %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="book-show-box book-show-author">
+      <div class="avatar"></div>
+      <h4><%= "#{@book.author.first_name} #{@book.author.last_name} "%></h4>
+    </div>
+    <div class="book-show-box book-show-contact-title">
+      <h1>Contact Information</h1>
+    </div>
+    <div class="book-show-box book-show-contact-information">
+      <p><%= @book.editor.name %></p>
+      <p><%= @book.editor.address %></p>
+    </div>
+    </div>
+  </div>
+</div>
