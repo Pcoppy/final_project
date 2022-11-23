@@ -6,6 +6,8 @@ ruby "3.1.2"
 # add pundit
 gem "pundit"
 
+gem "nokogiri"
+
 # Cloudinary
 gem "cloudinary"
 
