@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 require "faker"
+require "nokogiri"
 
 CATEGORY = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
 TAGS = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
