@@ -2,7 +2,7 @@ class EditorsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @editors = Editor.all
+    @editors = policy_scope(Editor.all)
   end
 
   def show
@@ -11,18 +11,20 @@ class EditorsController < ApplicationController
   end
 
   def new
+    policy_scope(Editor)
     @editor = Editor.new
     authorize @editor
   end
 
   def create
+    policy_scope(Editor)
     @editor = Editor.new(editors_params)
-    @editor.user = current_user
     authorize @editor
-    if @editor.save
-      redirect_to editor_path(@editor)
+    @editor.user = current_user
+    if @editor.save!
+      redirect_to new_book_path
     else
-      render :new
+      redirect_to root_path
     end
   end
 

@@ -30,8 +30,9 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    @authors = Author.all
+    @authors = policy_scope(Author.all)
     authorize @book
+    redirect_to new_user_editor_path(current_user.id) if current_user.editor.nil?
   end
 
   def create
