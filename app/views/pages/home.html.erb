@@ -34,7 +34,7 @@
       <p class="subscribed-text editor-text">Welcome back!</p>
       <p class="subscribed-text editor-text">Upload now your next book for the world to see!</p>
       <div class="btn-placer">
-        <%= link_to books_path do %>
+        <%= link_to new_book_path do %>
           <div class="btn button-primary homepage-button upload-button">UPLOAD NOW</div>
         <% end %>
       </div>
@@ -68,11 +68,11 @@
   <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
   <li class="nav-item scroll-on-click" role="tab" id="editors-tab" data-bs-toggle="tab" data-bs-target="#editors">
     <%= image_tag("book-editors.png", class: "nav-link-photo") %>
-    <button class="nav-link editor" id="editors-tab" data-bs-toggle="tab" data-bs-target="#editors" type="button" role="tab" aria-controls="editors" aria-selected="true">I own rights to books</button>
+    <button class="nav-link-homepage editor" id="editors-tab" data-bs-toggle="tab" data-bs-target="#editors" type="button" role="tab" aria-controls="editors" aria-selected="true">I own rights to books</button>
   </li>
   <li class="nav-item scroll-on-click" role="tab" id="producers-tab" data-bs-toggle="tab" data-bs-target="#producers">
     <%= image_tag("camera-producers.png", class: "nav-link-photo") %>
-    <button class="nav-link producer" id="producers-tab" data-bs-toggle="tab" data-bs-target="#producers" type="button" role="tab" aria-controls="producers" aria-selected="false">I want to adapt an existing book</button>
+    <button class="nav-link-homepage producer" id="producers-tab" data-bs-toggle="tab" data-bs-target="#producers" type="button" role="tab" aria-controls="producers" aria-selected="false">I want to adapt an existing book</button>
   </li>
   </ul>
   <div class="tab-content" id="myTabContent">
