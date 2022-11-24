@@ -29,20 +29,24 @@ class BooksController < ApplicationController
   end
 
   def new
+    policy_scope(Book)
     @book = Book.new
-    @authors = Author.all
+    @authors = policy_scope(Author.all)
     authorize @book
+    redirect_to new_user_editor_path(current_user.id) if current_user.editor.nil?
   end
 
   def create
-    book_params.author_id = book_params.author_id.id
-    @book = Book.new(book_params)
+    # books_params.author_id = books_params.author_id.id
+    policy_scope(Book)
+    @book = Book.new(books_params)
     @book.editor = current_user.editor
+    @book.approved = true # THIS LINE WILL NEED TO BE REMOVED
     authorize @book
     if @book.save
       redirect_to book_path(@book)
     else
-      render :new
+      redirect_to root_path
     end
   end
 
@@ -53,8 +57,8 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    book_params.author_id = book_params.author_id.id
-    @book.update(book_params)
+    books_params.author_id = books_params.author_id.id
+    @book.update(books_params)
     authorize @book
     redirect_to book_path(@book)
   end

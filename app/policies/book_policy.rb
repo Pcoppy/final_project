@@ -41,7 +41,7 @@ class BookPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      user.subscription == "none" ? scope.where(user: user) : scope.where(approved: true)
+      user.subscription == "none" ? scope.where(editor: user.editor) : scope.where(approved: true)
     end
   end
 end

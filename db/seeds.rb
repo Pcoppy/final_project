@@ -43,8 +43,9 @@ p "Lea created"
 
 p "giving birth to the authors..."
 30.times do
-  Author.create(first_name: Faker::Name.name.split(' ')[0], last_name: Faker::Name.name.split(' ')[1], description:
-  Faker::Quotes::Chiquito.sentence, user_id: User.ids.sample)
+  name = Faker::Name.name
+  Author.create(first_name: name.split(' ')[0], last_name: name.split(' ').last, description:
+  Faker::Quotes::Chiquito.sentence, user_id: User.ids.sample, full_name: name, approved: (rand(1..2) == 1))
 end
 
 p "writing the books..."

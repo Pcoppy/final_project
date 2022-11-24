@@ -1,0 +1,17 @@
+<div class="navbar-pusher">
+  <div class="form-title">
+    <h3>Share your book here!</h3>
+  </div>
+  <div class="container form-container">
+    <%= simple_form_for(@book) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :publishing_year %>
+      <%= f.input :summary %>
+      <%= f.input :additionnal_description %>
+      <%= f.input :genre, as: :select, collection: Book::CATEGORY%>
+      <%= f.input :tags, as: :select, collection: Book::TAGS, input_html: { multiple: true }%>
+      <%= f.association :author, label_method: :full_name, value_method: :id %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

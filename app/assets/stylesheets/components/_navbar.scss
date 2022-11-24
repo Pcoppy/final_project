@@ -22,6 +22,16 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  width: fit-content;
+}
+
+.nav-link-navbar {
+  width: fit-content !important;
+  color: white;
+  margin: 0px 10px;
+  &:hover {
+    color: white;
+  }
 }
 
 .navbar-lewagon .navbar-brand img {

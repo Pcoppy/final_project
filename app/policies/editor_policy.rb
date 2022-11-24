@@ -29,8 +29,8 @@ class EditorPolicy < ApplicationPolicy
 
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      user.subscription == "none" ? scope.where(user: user) : scope.all
+    end
   end
 end
