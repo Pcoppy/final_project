@@ -28,6 +28,7 @@
           <div class="form-actions">
             <%= f.button :submit, "JOIN US", class: "btn button-primary banner-button" %>
           </div>
+          <%= link_to "I already have an account", new_user_session_path, class: "homepage-login-btn" %>
         <% end %>
       </div>
     <% elsif @user.subscription == "none" %>
