@@ -24,7 +24,7 @@ class EditorsController < ApplicationController
     if @editor.save!
       redirect_to new_book_path
     else
-      redirect_to root_path
+      render :new
     end
   end
 

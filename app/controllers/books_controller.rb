@@ -29,6 +29,7 @@ class BooksController < ApplicationController
   end
 
   def new
+    policy_scope(Book)
     @book = Book.new
     @authors = policy_scope(Author.all)
     authorize @book

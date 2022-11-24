@@ -10,6 +10,8 @@ class AuthorsController < ApplicationController
 
   def create
     @author = Author.new(author_params)
+    full_name = "#{@author.first_name} #{@author.last_name}"
+    @author.full_name = full_name
   end
 
   private
