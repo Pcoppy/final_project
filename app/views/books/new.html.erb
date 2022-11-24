@@ -9,7 +9,7 @@
       <%= f.input :summary %>
       <%= f.input :additionnal_description %>
       <%= f.input :genre, as: :select, collection: Book::CATEGORY%>
-      <%= f.input :tags, as: :select, collection: Book::TAGS, input_html: { class: 'multiselectuser' }%>
+      <%= f.input :tags, as: :select, collection: Book::TAGS, input_html: { multiple: true }%>
       <%= f.association :author, label_method: :full_name, value_method: :id %>
       <%= f.submit %>
     <% end %>
