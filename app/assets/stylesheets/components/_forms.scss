@@ -1,7 +1,46 @@
 .form-container {
-  width: 60%;
+  width: 40%;
 }
 
 .form-title {
   text-align: center;
+  margin-bottom: 80px;
+}
+
+.form-same-lign {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+
+.form-book-tags {
+  background: none;
+  color: white;
+}
+
+.form-check-input[type="checkbox"] {
+  border-radius: 50%;
+  &:checked {
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+
+.check_boxes {
+  display: flex;
+  flex-wrap: wrap;
+  .col-form-label {
+    display: none;
+  }
+  .form-check {
+    background: rgba($color: #5d5c5c, $alpha: 0.4);
+    margin: 5px;
+    border: solid 2px rgba($color: #bcbcbc, $alpha: 0.4);
+    border-radius: 3px;
+    padding-right: 5px;
+  }
+}
+.form-box-uniform {
+  width: 250px;
 }
