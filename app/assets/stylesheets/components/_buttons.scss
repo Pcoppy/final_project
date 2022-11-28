@@ -14,17 +14,21 @@
 
 .btn-placer {
   width: 100%;
+  text-align: center;
   a {
     width: 100%;
-  justify-content: center;
-  display: flex;
+    justify-content: center;
+    display: flex;
+  }
+  p {
+    margin: 5px;
   }
 }
 
 .navbar-button {
-  padding: 5px;
+  padding: 10px;
   border: solid 1px white;
-  border-radius: 20px;
+  border-radius: 10px;
   &:hover {
     color: black;
     background-color: white;
