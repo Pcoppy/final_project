@@ -10,7 +10,7 @@ require "faker"
 require "nokogiri"
 
 CATEGORY = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
-TAGS = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
+TAGS = %w[Fiction Non-Fiction Slow-Burn Medieval Gore Teenagers Religious Scholar Educational Tension Historic Sci-Fi Corporate War Jungle Forest Magic Animals Dragons Adults]
 p "starting seed..."
 
 Book.destroy_all
@@ -83,7 +83,7 @@ end
 p "writing the books..."
 Author.all.each do |author|
   rand(1..10).times do
-    tag_list = [TAGS.sample]
+    tag_list = [TAGS.sample, TAGS.sample, TAGS.sample, TAGS.sample]
     Book.create(title: Faker::Book.title, publishing_year: rand(1900..2022), summary: Faker::Quotes::Shakespeare.hamlet_quote, genre: CATEGORY.sample, additionnal_description:
     Faker::Quotes::Shakespeare.king_richard_iii_quote, editor_id: Editor.ids.sample, tags: tag_list, author_id: author.id, approved: (rand(1..2) == 1))
   end

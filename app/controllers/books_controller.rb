@@ -39,14 +39,16 @@ class BooksController < ApplicationController
   def create
     # books_params.author_id = books_params.author_id.id
     policy_scope(Book)
+    # books_params[:tags] = books_params[:tags].compact_blank
     @book = Book.new(books_params)
+    @book.tags = @book.tags.compact_blank
     @book.editor = current_user.editor
     @book.approved = true # THIS LINE WILL NEED TO BE REMOVED
     authorize @book
     if @book.save
       redirect_to book_path(@book)
     else
-      redirect_to root_path
+      render :new
     end
   end
 
@@ -73,6 +75,6 @@ class BooksController < ApplicationController
   private
 
   def books_params
-    params.require(:book).permit(:title, :publishing_year, :summary, :additionnal_description, :genre, :author_id)
+    params.require(:book).permit(:title, :publishing_year, :summary, :additionnal_description, :genre, :author_id, tags: [])
   end
 end

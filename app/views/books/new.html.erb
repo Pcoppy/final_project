@@ -4,14 +4,21 @@
   </div>
   <div class="container form-container">
     <%= simple_form_for(@book) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :publishing_year %>
+      <div class="form-same-lign">
+        <%= f.input :title, input_html: { class: "form-box-uniform" } %>
+        <%= f.input :publishing_year, input_html: { class: "form-box-uniform" }%>
+      </div>
+      <div class="form-same-lign">
+        <%= f.association :author, label_method: :full_name, value_method: :id, input_html: { class: "form-box-uniform" } %>
+        <%= f.input :genre, as: :select, collection: Book::CATEGORY, input_html: { class: "form-box-uniform" }%>
+      </div>
       <%= f.input :summary %>
       <%= f.input :additionnal_description %>
-      <%= f.input :genre, as: :select, collection: Book::CATEGORY%>
-      <%= f.input :tags, as: :select, collection: Book::TAGS, input_html: { multiple: true }%>
-      <%= f.association :author, label_method: :full_name, value_method: :id %>
-      <%= f.submit %>
+      <p>Add some tags</p>
+      <%= f.input :tags, collection: Book::TAGS, input_html: { multiple: true, class: "form-book-tags" }, as: :check_boxes%>
+      <div class="form-actions">
+        <%= f.button :submit, "Share your book!", class:"btn form-btn-validate editor-btn" %>
+      </div>
     <% end %>
   </div>
 </div>
