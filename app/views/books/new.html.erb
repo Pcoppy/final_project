@@ -16,6 +16,7 @@
       <%= f.input :additionnal_description %>
       <p>Add some tags</p>
       <%= f.input :tags, collection: Book::TAGS, input_html: { multiple: true, class: "form-book-tags" }, as: :check_boxes%>
+      <%= f.input :photo, as: :file %>
       <div class="form-actions">
         <%= f.button :submit, "Share your book!", class:"btn form-btn-validate editor-btn" %>
       </div>

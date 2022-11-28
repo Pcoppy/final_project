@@ -4,14 +4,14 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+// import HelloController from "./hello_controller"
+// application.register("hello", HelloController)
 
-import HomepageController from "./homepage_controller"
-application.register("homepage", HomepageController)
+// import HomepageController from "./homepage_controller"
+// application.register("homepage", HomepageController)
 
-import NavBarScrollerController from "./nav_bar_scroller_controller"
-application.register("nav-bar-scroller", NavBarScrollerController)
+// import NavBarScrollerController from "./nav_bar_scroller_controller"
+// application.register("nav-bar-scroller", NavBarScrollerController)
 
-import SearchbarController from "./searchbar_controller"
-application.register("searchbar", SearchbarController)
+// import SearchbarController from "./searchbar_controller"
+// application.register("searchbar", SearchbarController)

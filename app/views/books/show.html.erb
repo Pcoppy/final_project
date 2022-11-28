@@ -9,7 +9,11 @@
     <div class="book-show-info-grid">
     <div class="book-show-box book-show-cover">
       <div class="book-show-cover-img">
-        <%= image_tag("#{@book.genre}_cover.png") %>
+        <% if @book.photo.attached? %>
+          <%= cl_image_tag @book.photo.key %>
+        <% else %>
+          <%= image_tag("#{@book.genre}_cover.png") %>
+        <% end %>
       </div>
     </div>
     <div class="book-show-box book-show-title">
