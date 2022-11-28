@@ -9,7 +9,7 @@ class Book < ApplicationRecord
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
   CATEGORY = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
-  TAGS = ["Adventure", "Action", "Thriller", "Romance", "Biography"]
+  TAGS = %w[Fiction Non-Fiction Slow-Burn Medieval Gore Teenagers Religious Scholar Educational Tension Historic Sci-Fi Corporate War Jungle Forest Magic Animals Dragons Adults]
 
   belongs_to :author
   belongs_to :editor
