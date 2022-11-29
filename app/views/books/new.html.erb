@@ -12,7 +12,7 @@
         <%= f.association :author, label_method: :full_name, value_method: :id, input_html: { class: "form-box-uniform" } %>
         <%= f.input :genre, as: :select, collection: Book::CATEGORY, input_html: { class: "form-box-uniform" }%>
       </div>
-      <%= f.input :summary %>
+      <%= f.input :summary { maxlength: 700 }%>
       <%= f.input :additionnal_description %>
       <p>Add some tags</p>
       <%= f.input :tags, collection: Book::TAGS, input_html: { multiple: true, class: "form-book-tags" }, as: :check_boxes%>

@@ -1,7 +1,7 @@
 .book-show-info-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 2fr 1fr 2fr;
+  grid-template-rows: 1fr 1.5fr 1fr 2fr;
   width: 100%;
   height: 100vh;
   padding-top: 40px;
@@ -26,8 +26,10 @@
   border: 1px solid white;
   box-shadow: 1px rgba($color: #000000, $alpha: 0.3);
   border-radius: 3px;
-  max-height: 375px;
+  max-height: 100%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
   img {
     width: 100%;
   }
@@ -35,16 +37,22 @@
 
 .book-show-title {
   grid-area: 1 / 2 / 2 / 3;
+  place-items: flex-start;
+  overflow: hidden;
+  place-content: start;
+  white-space: nowrap;
+  h1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 .book-show-description {
   grid-area: 2 / 2 / 3 / 3;
   flex-direction: column;
+  place-items: start;
   h5 {
     font-style: italic;
-  }
-  div {
-    display: flex;
   }
 }
 .book-show-tags {

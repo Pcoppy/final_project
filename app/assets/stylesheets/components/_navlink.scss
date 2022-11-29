@@ -7,7 +7,7 @@
   margin-bottom: 30px;
   font-size: 20px;
   font-family: "EB Garamond", "serif";
-  color: white !important;
+  color: $light-gray !important;
   justify-content: space-around;
   .nav-item {
     width: 40%;
@@ -43,14 +43,14 @@
 .nav-link-homepage {
   border-color: transparent !important;
   width: 80%;
-  color: white !important;
+  color: $light-gray !important;
   background: transparent;
 }
 
 .nav-link-homepage:hover {
   border-color: transparent !important;
   width: 80%;
-  color: white !important;
+  color: $light-gray !important;
 }
 
 .nav-link.active {
