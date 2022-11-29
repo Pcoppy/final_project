@@ -41,6 +41,7 @@
   overflow: hidden;
   place-content: start;
   white-space: nowrap;
+  flex-direction: column;
   h1 {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -56,7 +57,9 @@
   }
 }
 .book-show-tags {
-  grid-area: 3 / 1 / 4 / 2;
+  grid-area: 3 / 1 / 5 / 2;
+  place-items: flex-start;
+  flex-wrap: wrap;
 }
 .book-show-author {
   grid-area: 4 / 1 / 5 / 2;
@@ -78,6 +81,7 @@
 .book-contact-info-title {
   place-self: start start;
   color: rgba($color: #000000, $alpha: 0.3);
+  margin: 0px;
 }
 
 .book-contact-info-box {
@@ -88,4 +92,33 @@
   padding: 10px;
   border: solid 1px $orange;
   color: black;
+}
+
+.book-contact-info-details{
+  height: 70%;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.author-link-text {
+  display: flex;
+  margin-top: 5px;
+}
+
+.author-link {
+  font-style: italic;
+  text-decoration: underline;
+  margin-left: 3px;
+}
+
+.book-show-individual-tag {
+  width: 100px;
+  height: 40px;
+  background: rgba($color: $orange, $alpha: 0.3);
+  border: 1px solid $orange;
+  overflow: hidden;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  margin: 5px;
 }

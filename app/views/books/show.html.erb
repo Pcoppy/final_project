@@ -18,6 +18,12 @@
     </div>
     <div class="book-show-box book-show-title">
       <h1><%= @book.title %></h1>
+      <div class="author-link-text">
+        <p>Written by</p>
+        <%= link_to "/books?query=#{@book.author.first_name} #{@book.author.last_name}&button=" do%>
+          <p class="author-link"><%="#{@book.author.first_name} #{@book.author.last_name}"%></p>
+        <% end %>
+      </div>
     </div>
     <div class="book-show-box book-show-description">
       <div class="book-summary">
@@ -29,15 +35,13 @@
       </div>
     </div>
     <div class="book-show-box book-show-tags">
-      <ul>
-        <% @book.tags.each do |tag| %>
-          <%= tag %>
+      <% @book.tags.each do |tag| %>
+        <%= link_to "/books?query=#{tag}&button=" do%>
+          <div class="book-show-individual-tag">
+            <%= tag %>
+          </div>
         <% end %>
-      </ul>
-    </div>
-    <div class="book-show-box book-show-author">
-      <div class="avatar"></div>
-      <h4><%= "#{@book.author.first_name} #{@book.author.last_name} "%></h4>
+      <% end %>
     </div>
     <div class="book-show-box book-show-contact-title">
       <h1>Contact Information</h1>
@@ -45,20 +49,33 @@
     <div class="book-show-box book-show-contact-information">
       <div class="book-contact-info-box book-contact-info-editor-name">
         <p class="book-contact-info-title">Name of the editor</p>
-        <p><%= @book.editor.name %></p>
+        <div class="book-contact-info-details">
+          <p><%= @book.editor.name %></p>
+        </div>
+
       </div>
       <div class="book-contact-info-box book-contact-info-editor-address">
-        <p class="book-contact-info-title">Contact information</p>
-        <p><%= @book.editor.user.email %></p>
-        <p><%= @book.editor.phone_number %></p>
+        <p class="book-contact-info-title">How to contact them?</p>
+        <div class="book-contact-info-details">
+          <p><%= @book.editor.user.email %></p>
+          <p><%= @book.editor.phone_number %></p>
+        </div>
       </div>
       <div class="book-contact-info-box book-contact-info-editor-number">
-        <p class="book-contact-info-title">Country of operation</p>
-        <p><%= @book.editor.address %></p>
+        <p class="book-contact-info-title">Where do they operate from?</p>
+        <div class="book-contact-info-details">
+          <p><%= @book.editor.address %></p>
+        </div>
       </div>
       <div class="book-contact-info-box book-contact-info-editor-info">
         <p class="book-contact-info-title">More info</p>
-        <p>This box is reserved for an addition message given by the editor</p>
+        <div class="book-contact-info-details">
+          <% if @book.editor.more_info %>
+            <p><%= @book.editor.more_info  %></p>
+          <% else %>
+            <p>This box is reserved for an addition message given by the editor</p>
+          <% end %>
+        </div>
       </div>
     </div>
     </div>
