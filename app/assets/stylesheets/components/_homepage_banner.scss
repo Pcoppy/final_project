@@ -22,7 +22,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: white;
+  color: $light-gray;
   padding: 50px 100px;
 }
 
@@ -76,7 +76,7 @@
 // Elements for the right part of the page
 
 .homepage-banner-account-box {
-  background-color: white;
+  background-color: $light-gray;
   height: 90%;
   margin: auto;
   width: 40%;
@@ -123,6 +123,6 @@
 
 .banner-button:hover {
   background-color: rgba($color: $green, $alpha: 1);
-  color: white;
+  color: $light-gray;
   border-color: $green;
 }

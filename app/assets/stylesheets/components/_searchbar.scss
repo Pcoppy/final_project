@@ -4,7 +4,7 @@
 //   width: 570px !important;
 //   margin: 0 auto;
 //   margin-bottom: 20px;
-//   color: white;
+//   color: $light-gray;
 
 //   input::placeholder {
 //     font-size: 16px;
@@ -20,7 +20,7 @@
   background-color: transparent;
   border: none;
   padding: 5px 0px;
-  color: white!important;
+  color: $light-gray!important;
   transition: border-bottom 0.3s;
 }
 

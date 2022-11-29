@@ -6,11 +6,11 @@ export default class extends Controller {
   }
 }
 
-function changeSearchbarDisplay() {
-  const searchbarContainer = document.querySelector(".searchbar-container")
-  searchbarContainer.classList.toggle("underlined")
-}
-const searchbarQuery = document.querySelector(".form-control-searchbar")
+// function changeSearchbarDisplay() {
+//   const searchbarContainer = document.querySelector(".searchbar-container")
+//   searchbarContainer.classList.toggle("underlined")
+// }
+// const searchbarQuery = document.querySelector(".form-control-searchbar")
 
-searchbarQuery.addEventListener("focus", changeSearchbarDisplay)
-searchbarQuery.addEventListener("focusout", changeSearchbarDisplay)
+// searchbarQuery.addEventListener("focus", changeSearchbarDisplay)
+// searchbarQuery.addEventListener("focusout", changeSearchbarDisplay)

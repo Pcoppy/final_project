@@ -13,7 +13,8 @@ class Book < ApplicationRecord
 
   belongs_to :author
   belongs_to :editor
-  has_many :views
+  has_many :view
+  has_one_attached :photo
   validates :title, :publishing_year, :summary, presence: true
   validates :genre, inclusion: { in: CATEGORY }
   validates :tags, inclusion: { in: TAGS }
