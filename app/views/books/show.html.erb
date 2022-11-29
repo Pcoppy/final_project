@@ -10,7 +10,7 @@
     <div class="book-show-box book-show-cover">
       <div class="book-show-cover-img">
         <% if @book.photo.attached? %>
-          <%= cl_image_tag @book.photo.key %>
+          <%= cl_image_tag @book.photo.key, gravity: :center, class:"book-show-photo" %>
         <% else %>
           <%= image_tag("#{@book.genre}_cover.png") %>
         <% end %>
