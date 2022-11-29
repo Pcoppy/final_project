@@ -25,9 +25,7 @@
         <p><%= @book.summary %></p>
       </div>
       <div class="book-more-info">
-        <%# <button type="button" class="btn-more-infos" > %>
-          <h5 data-bs-toggle="modal" data-bs-target="#ShowMoreInfoModal" style="cursor: pointer;">Click here for additionnal information</h5>
-        <%# </button> %>
+        <p data-bs-toggle="modal" data-bs-target="#ShowMoreInfoModal" style="cursor: pointer; text-decoration: underline; font-style: italic">Click here for additionnal information about the book</p>
       </div>
     </div>
     <div class="book-show-box book-show-tags">
@@ -45,8 +43,23 @@
       <h1>Contact Information</h1>
     </div>
     <div class="book-show-box book-show-contact-information">
-      <p><%= @book.editor.name %></p>
-      <p><%= @book.editor.address %></p>
+      <div class="book-contact-info-box book-contact-info-editor-name">
+        <p class="book-contact-info-title">Name of the editor</p>
+        <p><%= @book.editor.name %></p>
+      </div>
+      <div class="book-contact-info-box book-contact-info-editor-address">
+        <p class="book-contact-info-title">Contact information</p>
+        <p><%= @book.editor.user.email %></p>
+        <p><%= @book.editor.phone_number %></p>
+      </div>
+      <div class="book-contact-info-box book-contact-info-editor-number">
+        <p class="book-contact-info-title">Country of operation</p>
+        <p><%= @book.editor.address %></p>
+      </div>
+      <div class="book-contact-info-box book-contact-info-editor-info">
+        <p class="book-contact-info-title">More info</p>
+        <p>This box is reserved for an addition message given by the editor</p>
+      </div>
     </div>
     </div>
   </div>

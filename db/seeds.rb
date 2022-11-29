@@ -27,48 +27,48 @@ p "Users destroyed"
 p "creating Pierre"
 pierre = User.create(email: "pcoppy@gmail.com", password: "123456", first_name: "Pierre", last_name: "Coppermann", username:"pcoppy", subscription: "premium")
 pierre_producer = Producer.create(user_id: pierre.id, name: "Pierre Coppermann", company: "CoppermannProd", interests: "action,romance")
-pierre_editor = Editor.create(user_id: pierre.id, name: "Pierre Coppermann", address: "Paris", country: "France")
+pierre_editor = Editor.create(user_id: pierre.id, phone_number: "+33 6 42 12 21 81", name: "Pierre Coppermann", address: "Paris", country: "France")
 p "Pierre created"
 
 p "creating Margot"
 margot = User.create(email: "margot@gmail.com", password: "123456", first_name: "Margot", last_name: "Wilwertz", username:"margot", subscription: "regular")
 margot_producer = Producer.create(user_id: margot.id, name: "Margot Wilwertz", company: "WilwertzProd", interests: "action,adventure")
-margot_editor = Editor.create(user_id: margot.id, name: "Margot Wilwertz", address: "Paris", country: "France")
+margot_editor = Editor.create(user_id: margot.id, phone_number: "+33 6 79 17 84 90", name: "Margot Wilwertz", address: "Paris", country: "France")
 p "Margot created"
 
 p "creating Lea"
 lea = User.create(email: "lea@gmail.com", password: "123456", first_name: "Lea", last_name: "Wehbe", username:"lea", subscription: "premium")
-lea_editor = Editor.create(user_id: lea.id, name: "Lea Wehbe", address: "Paris", country: "France")
+lea_editor = Editor.create(user_id: lea.id, phone_number: "+33 6 11 65 40 79", name: "Lea Wehbe", address: "Paris", country: "France")
 lea_producer = Producer.create(user_id: lea.id, name: "Lea Whebe", company: "LeaProd", interests: "action,romance")
 p "Lea created"
 
 p "creating Simon"
 simon = User.create(email: "simon@gmail.com", password: "123456", first_name: "Simon", last_name: "Bonnaventure", username:"simon", subscription: "premium")
-simon_editor = Editor.create(user_id: simon.id, name: "Simon Bonnaventure", address: "Paris", country: "France")
+simon_editor = Editor.create(user_id: simon.id, phone_number: "+33 7 81 75 83 29", name: "Simon Bonnaventure", address: "Paris", country: "France")
 simon_producer = Producer.create(user_id: simon.id, name: "simon Bonnaventure", company: "SimonProd", interests: "thriller,romance")
 p "Simon created"
 
 p "creating Gaia"
 gaia = User.create(email: "gaia@gmail.com", password: "123456", first_name: "gaia", last_name: "Gallarini", username:"gaia", subscription: "premium")
-gaia_editor = Editor.create(user_id: gaia.id, name: "Gaia Gallarini", address: "Paris", country: "France")
+gaia_editor = Editor.create(user_id: gaia.id, phone_number: "+39 340 308 0681", name: "Gaia Gallarini", address: "Paris", country: "France")
 gaia_producer = Producer.create(user_id: gaia.id, name: "Gaia Gallarini", company: "GaiaProd", interests: "adventure,biography")
 p "gaia created"
 
 p "creating Francesca"
 francesca = User.create(email: "francesca@gmail.com", password: "123456", first_name: "Francesca", last_name: "Zaja", username:"francesca", subscription: "premium")
-francesca_editor = Editor.create(user_id: francesca.id, name: "Francesca Zaja", address: "Paris", country: "France")
-francesca_producer = Producer.create(user_id: francesca.id, name: "Francesca Zaja", company: "FrancescaProd", interests: "adventure,biography")
+francesca_editor = Editor.create(user_id: francesca.id, phone_number: "+39 347 231 6402", name: "Francesca Zaja", address: "Paris", country: "France")
+francesca_producer = Producer.create(user_id: francesca.id,  name: "Francesca Zaja", company: "FrancescaProd", interests: "adventure,biography")
 p "Francesca created"
 
 p "creating Philippine"
 philippine = User.create(email: "philippine@gmail.com", password: "123456", first_name: "Philippine", last_name: "Lamy", username:"philippine", subscription: "premium")
-philippine_editor = Editor.create(user_id: philippine.id, name: "Philippine Lamy", address: "Paris", country: "France")
+philippine_editor = Editor.create(user_id: philippine.id, phone_number: "+33 6 51 20 44 07", name: "Philippine Lamy", address: "Paris", country: "France")
 philippine_producer = Producer.create(user_id: philippine.id, name: "Philippine Lamy", company: "PhilippineProd", interests: "thriller,biography")
 p "Philippine created"
 
 p "creating Rachel"
 rachel = User.create(email: "rachel@gmail.com", password: "123456", first_name: "Rachel", last_name: "Lamy", username:"rachel", subscription: "premium")
-rachel_editor = Editor.create(user_id: rachel.id, name: "Rachel Lamy", address: "Paris", country: "France")
+rachel_editor = Editor.create(user_id: rachel.id, phone_number: "+33 7 50 80 83 31", name: "Rachel Lamy", address: "Paris", country: "France")
 rachel_producer = Producer.create(user_id: rachel.id, name: "Rachel Lamy", company: "Rachelprod", interests: "biography")
 p "Rachel created"
 
