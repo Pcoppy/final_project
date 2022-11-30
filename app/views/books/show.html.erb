@@ -64,7 +64,12 @@
       <div class="book-contact-info-box book-contact-info-editor-number">
         <p class="book-contact-info-title">Where do they operate from?</p>
         <div class="book-contact-info-details">
-          <p><%= @book.editor.address %></p>
+        <% if @address.city && @address.country%>
+          <p><%= @address.city %></p>
+          <p><%= @address.country %></p>
+        <% else %>
+          <p>We could not get this information</p>
+        <% end %>
         </div>
       </div>
       <div class="book-contact-info-box book-contact-info-editor-info">

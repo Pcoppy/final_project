@@ -14,6 +14,9 @@ gem "cloudinary"
 # PG Search
 gem "pg_search"
 
+# geocoder
+gem "geocoder"
+
 #Faker Gem
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 

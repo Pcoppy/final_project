@@ -6,10 +6,16 @@
 }
 
 .banner-button {
-  color: $green;
-  background-color: rgba($color: $green, $alpha: 0.3);
+  color: $purple;
+  background-color: rgba($color: $purple, $alpha: 0.3);
   margin: auto;
+  margin-top: 20px;
   width: 80% !important;
+  &:hover {
+    background-color: rgba($color: $purple, $alpha: 1);
+    color: $light-gray;
+    border-color: $purple;
+  }
 }
 
 .btn-placer {

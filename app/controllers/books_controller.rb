@@ -14,6 +14,7 @@ class BooksController < ApplicationController
 
   def show
     @book = policy_scope(Book).find(params[:id])
+    @address = Geocoder.search([@book.editor.latitude, @book.editor.longitude]).first
     @author = Author.new
     authorize @book
     # Changing the view count

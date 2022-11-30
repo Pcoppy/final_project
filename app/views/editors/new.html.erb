@@ -4,9 +4,14 @@
   </div>
   <div class="container form-container">
     <%= simple_form_for(@editor) do |f| %>
-      <%= f.input :name %>
+      <%= f.input :name, placeholder: "What is your/the company you're representing's name?" %>
+      <%= f.input :email, required: false, placeholder: "By default: #{current_user.email}" %>
+      <%= f.input :phone_number, placeholder: "+33 70 70 70 70" %>
       <%= f.input :address %>
-      <%= f.submit %>
+      <%= f.input :more_info, label: "Is there something else you would like potential producers to know?" %>
+      <div class="form-actions">
+        <%= f.button :submit, "Create your account!", class:"btn form-btn-validate editor-btn" %>
+      </div>
     <% end %>
   </div>
 </div>
