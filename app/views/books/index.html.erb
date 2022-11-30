@@ -22,7 +22,11 @@
         <div class="database-book-container-search">
           <% @books.each do |book| %>
               <div class="book-card-separator book-card-separator-search">
+              <% if book.photo.attached? %>
+                <%= cl_image_tag book.photo.key, gravity: :center, class:"database-index-photo" %>
+              <% else %>
                 <%= image_tag("#{book.genre}_cover.png", class:"database-index-photo") %>
+              <% end %>
                 <%= link_to book_path(book) do %>
                   <div class="card database-book-card">
                     <%= book.title %>
@@ -54,7 +58,11 @@
             <div class="database-book-tag-list">
               <% @books.map {|book| book if book.tags.include?(tag)}.compact.first(5).each do |tag_book|%>
                 <div class="book-card-separator">
-                  <%= image_tag("#{tag_book.genre}_cover.png", class:"database-index-photo") %>
+                  <% if tag_book.photo.attached? %>
+                    <%= cl_image_tag tag_book.photo.key, gravity: :center, class:"database-index-photo" %>
+                  <% else %>
+                    <%= image_tag("#{tag_book.genre}_cover.png", class:"database-index-photo") %>
+                  <% end %>
                   <%= link_to book_path(tag_book) do %>
                     <div class="card database-book-card">
                       <%= tag_book.title %>
