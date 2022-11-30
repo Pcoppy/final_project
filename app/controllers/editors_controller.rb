@@ -19,6 +19,7 @@ class EditorsController < ApplicationController
   def create
     policy_scope(Editor)
     @editor = Editor.new(editors_params)
+    @editor.email = current_user.email if editors_params[:email] == ""
     authorize @editor
     @editor.user = current_user
     if @editor.save!
@@ -50,6 +51,6 @@ class EditorsController < ApplicationController
   private
 
   def editors_params
-    params.require(:editor).permit(:name, :country, :address)
+    params.require(:editor).permit(:name, :address, :phone_number, :email, :more_info)
   end
 end

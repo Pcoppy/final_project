@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_180736) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_101855) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,12 +74,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_180736) do
   create_table "editors", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.string "country"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "phone_number"
     t.text "more_info"
+    t.string "email"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_editors_on_user_id"
   end
 
