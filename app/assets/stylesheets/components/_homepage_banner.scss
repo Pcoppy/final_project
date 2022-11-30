@@ -51,6 +51,7 @@
 
 .homepage-text {
   font-weight: lighter;
+  line-height: 30px;
 }
 
 .homepage-list-partners {
@@ -119,10 +120,4 @@
 
 .simple_form.new_user {
   font-weight: lighter;
-}
-
-.banner-button:hover {
-  background-color: rgba($color: $green, $alpha: 1);
-  color: $light-gray;
-  border-color: $green;
 }

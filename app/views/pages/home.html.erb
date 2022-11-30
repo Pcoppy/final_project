@@ -3,16 +3,22 @@
 <div class="homepage-banner">
   <div class="homepage-banner-presentation">
     <div class="homepage-banner-presentation-text">
-      <h1 class="homepage-title">PLACEHOLDER TITLE</h1>
-      <p class="homepage-text">PLACEHOLDER DESCRIPTION</p>
+      <h1 class="homepage-title">CREATIVITY AT YOUR FINGERTIPS</h1>
+      <p class="homepage-text">Rights is a platform built to help both producers and writers work together to
+        create meaningful movies. Whether you are a confirmed editor,
+        an aspiring author, a renowned producer or a film student, this platform was thought for you.
+      </p>
+
+
     </div>
   </div>
   <div class="homepage-banner-account-box">
     <div class="img-account-box-container">
-      <%= image_tag "video-camera.png", class:"img-account-box"%>
+      <%= image_tag "rights-logo.png", class:"img-account-box"%>
     </div>
     <% if !user_signed_in? %>
-      <p>Lorem ipsum dolor sit, amet consectetur adiozeuhdezioudhzeioudhsipisicing elit. Harum in doloremque et maiores rem quam.</p>
+      <p>Join the community in just a few clicks! Just tag in your email and your password, and you’ll officially be a member of the Rights Community.
+       (we will ask you additional information if you wish to publish some of your works on our platform) </p>
       <div class="homepage-login-signup">
         <%= simple_form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
           <div class="form-inputs">
@@ -21,7 +27,8 @@
                         input_html: { autocomplete: "email" } %>
             <%= f.input :password,
                         required: false,
-                        input_html: { autocomplete: "current-password" } %>
+                        label: "Password (6 characters at least)",
+                        input_html: { autocomplete: "current-password", minimumlength: 6 } %>
           </div>
 
           <div class="form-actions">
@@ -52,18 +59,6 @@
       </div>
     <% end %>
   </div>
-  <%# <h1>JOIN THE COMMUNITY</h1>
-  <div class="producer-editor">
-    <div class="engagement editor-engagement">
-      <h1>DISPLAY YOUR RIGHTS</h1>
-      <div class="button-primary banner-button">JOIN US NOW</div>
-    </div>
-    <h1>OR</h1>
-    <div class="engagement producer-engagement">
-      <h1>BROWSE THE WORKS</h1>
-      <div class="button-primary banner-button">JOIN US NOW</div>
-    </div>
-  </div> %>
 </div>
 <div class="container tutorial-container">
   <div class="tutorial-title">
