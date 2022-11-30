@@ -56,13 +56,13 @@ p "gaia created"
 
 p "creating Francesca"
 francesca = User.create(email: "francesca@gmail.com", password: "123456", first_name: "Francesca", last_name: "Zaja", username:"francesca", subscription: "premium")
-francesca_editor = Editor.create(user_id: francesca.id, email: francesca.email, phone_number: "+39 347 231 6402", name: "Francesca Zaja", address: "Paris", country: "France")
+francesca_editor = Editor.create(user_id: francesca.id, email: francesca.email, phone_number: "+39 347 231 6402", name: "Francesca Zaja", address: "Paris")
 francesca_producer = Producer.create(user_id: francesca.id,  name: "Francesca Zaja", company: "FrancescaProd", interests: "adventure,biography")
 p "Francesca created"
 
 p "creating Philippine"
 philippine = User.create(email: "philippine@gmail.com", password: "123456", first_name: "Philippine", last_name: "Lamy", username:"philippine", subscription: "premium")
-philippine_editor = Editor.create(user_id: philippine.id, email: philippine.email, phone_number: "+33 6 51 20 44 07", name: "Philippine Lamy", address: "Paris", country: "France")
+philippine_editor = Editor.create(user_id: philippine.id, email: philippine.email, phone_number: "+33 6 51 20 44 07", name: "Philippine Lamy", address: "Paris")
 philippine_producer = Producer.create(user_id: philippine.id, name: "Philippine Lamy", company: "PhilippineProd", interests: "thriller,biography")
 p "Philippine created"
 
