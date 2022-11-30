@@ -17,8 +17,8 @@
       <%= image_tag "rights-logo.png", class:"img-account-box"%>
     </div>
     <% if !user_signed_in? %>
-      <p>Join the community in just a few clicks! Just tag in your email and your password, and you’ll officially be a member of the Rights Community.
-       (we will ask you additional information if you wish to publish some of your works on our platform) </p>
+      <p>Join the community in just a few clicks! Simply type in your email and your password, and you’ll officially be a member of the Rights Community.
+       (We will ask you additional information if you wish to publish some of your works on our platform) </p>
       <div class="homepage-login-signup">
         <%= simple_form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
           <div class="form-inputs">
